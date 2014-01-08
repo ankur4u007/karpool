@@ -3,7 +3,6 @@
   <head>
     <title>Storage Example</title>
  
-    <script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     // Wait for Cordova to load
@@ -13,14 +12,15 @@
     // Cordova is ready
     //
     function onDeviceReady() {
-        window.localStorage.setItem("key", "value");
-        var keyname = window.localStorage.key(i);
+        window.localStorage.setItem("username", "Saahas");
+        var keyname = window.localStorage.key(0);
         // keyname is now equal to "key"
-        var value = window.localStorage.getItem("key");
+        var value = window.localStorage.getItem("username");
+		alert("username in local storage:" + value);
         // value is now equal to "value"
-        window.localStorage.removeItem("key");
-        window.localStorage.setItem("key2", "value2");
-        window.localStorage.clear();
+//        window.localStorage.removeItem("key");
+        window.localStorage.setItem("password", "phonegap");
+        //window.localStorage.clear();
         // localStorage is now empty
     }
 
