@@ -16,19 +16,24 @@
         var keyname = window.localStorage.key(0);
         // keyname is now equal to "key"
         var value = window.localStorage.getItem("username");
-		alert("username in local storage:" + value);
+		alert(value);
         // value is now equal to "value"
 //        window.localStorage.removeItem("key");
-        window.localStorage.setItem("password", "phonegap");
+        window.localStorage.setItem("key2", "value2");
         //window.localStorage.clear();
-        // localStorage is now empty 
+        // localStorage is now empty
     }
 
 
     </script>
   </head>
   <body>
-    <h1>Example</h1>
-    <p>localStorage</p>
+	  <div class="content">		
+		<div class="backButton">
+				<a class="button-prev" href="index.html" data-transition="fade" align="center">Back</a>
+		</div>
+	  </div>
+    <h1>Hi</h1>
+    
   </body>
 </html>
