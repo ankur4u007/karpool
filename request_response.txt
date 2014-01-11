@@ -1,0 +1,95 @@
+1st page :
+type : non ajax (means client is waiting for the operation should give a fast response)
+request : name(string) , empid(string) (if not impelemnted in database can be removed) , 
+	  phone (long) , device_id (string)
+response : if success ("user_id stored in database for corresponding user") 
+	   if error or ("error") (both are string)
+path to call from javascript:(to be updated by amit)
+what happens in this page : we send the user details to server to store in database, in response server
+return user_id stored in database else error
+
+
+2nd page :
+type : non ajax (means client is waiting for the operation should give a fast response)
+request : routes(json array),vechile_number(string), model(string),destination(string(itpl or pritech)),
+	  seats(int),timeToReachDestination(string format ex "09:00 AM"),preferences(json array)
+response : if success ("vechile id number from vechile table")(string)
+	   if error ("error") (string)
+path to call from javascript:(to be updated by amit)
+what happens in this page : we send the vechile form to server to store in database, in response server
+return vechile id if success else error
+
+
+3rd page :
+type : non ajax (means client is waiting for the operation should give a fast response)
+request : vechile_id(int)
+response : if success : passenger_id(user_id), passenger_name, vechile_id for the vechile ( type: json list)
+	  if error ("error") (string)
+path to call from javascript:(to be updated by amit)
+what happens in this page : we send the vechile_id to server , in response server
+return passengers(excluding the owner) traveling by that vechile
+
+
+4th page :
+type : non ajax (means client is waiting for the operation should give a fast response)
+request : vechile_id(int)
+response : if success ("success") 
+	   if error ("error") (both are string)
+path to call from javascript:(to be updated by amit)
+what happens in this page : we send the vechile_id to server to remove from database, in response server
+removes the corresponding entry and sends the notification to all passengers and then response the 
+client with success else error
+
+
+5th page:
+type : non ajax (means client is waiting for the operation should give a fast response)
+request: user_id (owner )
+response : if success list of vechile_id,vechile_name (json list)
+	   if error("error") ( string)
+path to call from javascript:(to be updated by amit)
+what happens in this page : we send the user_id (owner) to server , in response server returns the vechiles
+listed by the given owner(user_id) in the vechile table
+
+
+6th page: 
+type : non ajax (means client is waiting for the operation should give a fast response)
+request: passenger_id(user_id), vechile_id
+response : if success ("success") 
+	   if error ("error") (both are string)
+path to call from javascript:(to be updated by amit)
+what happens in this page : we send the user_id and vechile_id to server , in response server deletes 
+the given passenger for the vechile, notifies the passenger, return success else error.
+
+--- passenger -----
+
+7th page : 
+type : non ajax (means client is waiting for the operation should give a fast response)
+request: user_id ( passenger )
+response : if success list of vechile_id,vechile_name,user_id(passenger) (json list)
+	   if error("error") ( string)
+path to call from javascript:(to be updated by amit)
+what happens in this page : we send the user_id (passenger ) to server , in response server returns the vechiles
+subscribed by the passenger(user_id).
+
+8th page:
+type : non ajax (means client is waiting for the operation should give a fast response)
+request : vechile_id(int),user_id(passenger)(string)
+response : if success ("success") 
+	   if error ("error") (both are string)
+path to call from javascript:(to be updated by amit)
+what happens in this page : we send the vechile_id and the passenger_id to server to remove from database, in response server
+removes the corresponding passenger from the vechile and returns success else error.
+
+9th page:
+type : non ajax (means client is waiting for the operation should give a fast response)
+request : vechile_id(int),
+response : if success list of details of vechile from vechile table (json list)
+	   if error ("error") ( string)
+path to call from javascript:(to be updated by amit)
+what happens in this page : we send the vechile_id  to server, in response server
+gets the details for the vechile from vechile table and returns json list else error.
+
+(to be continued...)
+
+
+
