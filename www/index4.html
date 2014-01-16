@@ -1,39 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Storage Example</title>
- 
-    <script type="text/javascript" charset="utf-8">
-
-    // Wait for Cordova to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-        window.localStorage.setItem("username", "Saahas");
-        var keyname = window.localStorage.key(0);
-        // keyname is now equal to "key"
-        var value = window.localStorage.getItem("username");
-		alert(value);
-        // value is now equal to "value"
-//        window.localStorage.removeItem("key");
-        window.localStorage.setItem("key2", "value2");
-        //window.localStorage.clear();
-        // localStorage is now empty
-    }
-
-
+  <head> 
+	<script src="js/jquery.1.9.1.min.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){  						
+			var vehicleIDVal = window.localStorage.getItem("vehicleId");						
+			$('#vehicleID').append('Vehicle with ID' + vehicleIDVal + 'registered');  
+		});
+		
+    
     </script>
   </head>
   <body>
 	  <div class="content">		
 		<div class="backButton">
-				<a class="button-prev" href="index.html" data-transition="fade" align="center">Back</a>
+				<a class="button-prev" href="index.html" data-transition="fade" align="center">Back</a>				
+				<div id="vehicleID" name="vehicleID" />
 		</div>
 	  </div>
-    <h1>Hi</h1>
+    
     
   </body>
 </html>

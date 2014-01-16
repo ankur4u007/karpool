@@ -3,36 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>SGKarpool</title>
+      
+	<!-- bootstrap just to have good looking page -->
+	<link href="bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet" />
 
-    <!-- Sets initial viewport load and disables zooming  -->
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-
-    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    
-    <!-- Set a shorter title for iOS6 devices when saved to home screen -->
-    <meta name="apple-mobile-web-app-title" content="Ratchet">
-
-    <!-- Include the compiled Ratchet CSS -->
-    <link rel="stylesheet" href="css/ratchet.css">
-
-    <!-- Include the compiled Ratchet JS -->
-    <script src="lib/ratchet.js"></script>
-    <!-- Intro paragraph styles. Delete once you start using this page -->
-    <style type="text/css">
-        .welcome {
-          line-height: 1.5;
-          color: #555;
-		  text-align:center;
-		  margin-top:20%;
-        }
-		.welcomeButton {
-		  text-align:center;
-        }
-    </style>
-
+    <!-- Include the compiled Ratchet JS -->    
+	<script src="js/jquery.1.9.1.min.js"></script>
+	<script src="js/myfunctions.js"></script>   	
   </head>
+	
   <body>
 
   <!-- Make sure all your bars are the first things in your <body> -->
@@ -44,12 +23,26 @@
   </header>
 
   <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
-  <div class="content">	
-	<p>Owner Name:<input type="text" name="ownerName" size="20%"></p><br>
-	<p>Vehicle Model:<input type="text" name="vehicleModel" ></p><br>
-	<p>Vehicle Number:<input type="text" name="vehicleModel"  ></p>
-	<p>Origin:<input type="text" name="origin" ></p>
-  </div>
-
+   <div class="article" style="margin:10px;">
+		<div class="input-prepend">
+			<span class="add-on">Owner Name</span>
+			<input class="span4" id="ownerName" name="ownerName" type="text" placeholder="Owner Name...">
+		</div>
+		<br/>
+		<div class="input-prepend">
+			<span class="add-on">Phone No</span>
+			<input class="span4" id="phoneNo" name="phoneNo" type="text" placeholder="Phone No...">
+		</div>
+		<br/>
+		<div class="input-prepend">
+			<span class="add-on">Device ID</span>
+			<input class="span2" id="deviceId" name="deviceId" type="text" >
+		</div>
+		<br/>		
+		<p>
+			<button class="btn btn-primary" type="button" onclick="sendAjax()">Submit</button>
+		</p>
+	</div>
+  
   </body>
 </html>
